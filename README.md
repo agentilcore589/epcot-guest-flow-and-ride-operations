@@ -1,99 +1,94 @@
-Project Overview
+# EPCOT Guest Flow Analysis
 
-This project analyzes guest behavior and operational performance at EPCOT by combining zone-to-zone guest flow data with attraction wait-time analytics. The goal is to understand how guests move throughout the park, identify circulation hubs, and evaluate ride efficiency and wait-time accuracy across different attraction categories.
+This project explores simulated EPCOT guest movement data to understand how visitors move between park zones, how congestion changes throughout the day, and how operational factors like wait times relate to guest experience metrics.
 
-Guest circulation patterns are evaluated using matrix-based heatmaps and network visualizations, while ride operations are analyzed by comparing posted vs. actual wait times and calculating efficiency metrics.
+The analysis is **descriptive**, with a focus on identifying patterns that could inform crowd management and guest experience decisions.
 
-Note on data:
+---
 
-The guest flow data used in this project is a synthetic, structurally representative dataset designed to mirror realistic EPCOT circulation patterns. This allows analytical techniques to be demonstrated without access to proprietary guest data.
+## Project Overview
 
-Key Questions
+Using simulated event-level data, this analysis examines:
 
-Which EPCOT zones act as major circulation hubs?
+- Guest movement between EPCOT zones
+- Zone-level congestion by time of day
+- Ride wait time patterns
+- Relationships between wait time, fun score, and frustration score
+- Differences in guest experience across festivals
 
-Are guest movement patterns directionally asymmetric between zones?
+The project combines **Python-based exploratory data analysis** with a **Power BI dashboard** to demonstrate both analytical reasoning and clear communication of results.
 
-How accurately do posted wait times reflect actual guest experience?
+---
 
-How does ride efficiency vary by attraction category (thrill, family, show)?
+## Data Description
 
-Guest Flow Analysis
+The dataset represents simulated guest activity within EPCOT and includes:
 
-Methods
+- Timestamps for movement and ride events
+- Source and destination zones (`zoneS`, `zoneD`)
+- Ride names and actual wait times
+- Guest experience metrics (fun score, frustration score)
+- Festival identifiers
 
-Zone-to-zone flow matrices
+> **Note:** This dataset is simulated and is used for educational and portfolio purposes only.
 
-Heatmaps with conditional formatting
+---
 
-Sankey diagram for directional connectivity
+## Analysis Highlights
 
-Why multiple visuals?
+### Zone Congestion
+- Guest movement patterns vary significantly by both **zone** and **time of day**
+- Certain zones experience sustained inflow across multiple hours, while others show short but intense peaks
 
-Because the guest flow dataset is stabilized at one record per zone-to-zone connection, magnitude is best analyzed using heatmaps, while the Sankey diagram is used to illustrate structural connectivity and directional pathways rather than absolute volume.
+### Ride Wait Times
+- A small set of attractions consistently generates the highest average wait times
+- These rides represent meaningful time costs for guests, especially during peak periods
 
-Insights
+### Guest Experience Metrics
+- Longer wait times are generally associated with higher frustration, though the relationship is not perfectly linear
+- Fun and frustration scores reflect a multi-dimensional guest experience rather than a simple tradeoff
 
-Central World Showcase pavilions (e.g., France, United Kingdom, Germany, Japan) act as major circulation hubs.
+### Festival Comparisons
+- Guest experience metrics vary across festivals
+- Some festivals show more consistent fun scores, while others exhibit wider variability
 
-Peripheral zones show lower overall connectivity, indicating more destination-driven visits.
+---
 
-Directional asymmetries suggest guests are more likely to exit certain pavilions than enter them, which has implications for crowd management and staffing.
+## Tools & Technologies
 
-Ride Operations & Wait-Time Analysis
+- **Python** (pandas, numpy, matplotlib, seaborn)
+- **Jupyter Notebook** for exploratory analysis
+- **Power BI** for dashboard visualization
+- **GitHub** for version control and portfolio presentation
 
-Methods
+---
 
-Posted vs. actual wait time comparison
+## Files in This Repository
 
-Ride efficiency score calculation
+- `epcot_guest_flow_analysis.ipynb`  
+  Main exploratory data analysis notebook with visualizations and interpretations
 
-Category-level aggregation (thrill, family, show)
+- `epcot_guest_flow_large_stable.csv`  
+  Simulated EPCOT guest flow dataset
 
-Ranking of attractions by average actual wait time
+- `Epcot.pbix`  
+  Power BI dashboard file
 
-Insights
+- `Epcot.pdf`  
+  Exported Power BI dashboard (static view)
 
-Posted wait times generally track actual waits but diverge more for high-demand thrill attractions.
+---
 
-Ride efficiency varies substantially by category, with some attractions consistently outperforming others in managing queue times.
+## Key Takeaways
 
-Certain rides show persistently high average actual waits, highlighting opportunities for operational optimization or guest communication improvements.
+This project demonstrates how combining movement data, operational metrics, and guest experience indicators can provide a more complete picture of behavior within a theme park environment.
 
-Visualizations Included
+Rather than predicting outcomes, the analysis focuses on **understanding patterns** that could support operational awareness and experience-focused decision-making.
 
-Zone-to-zone guest flow heatmaps
+---
 
-Directional Sankey diagram (structural connectivity)
+## Author
 
-Posted vs. actual wait time scatter plot
-
-Ride efficiency bar charts
-
-Average wait time rankings by attraction
-
-All visuals were built in Power BI with interactive filters for exploration.
-
-Tools & Technologies
-
-Power BI (visualization, DAX, dashboarding)
-
-Python / Pandas (data preparation, optional preprocessing)
-
-Synthetic data modeling for guest flow simulation
-
-Why This Project Matters
-
-This analysis demonstrates how to:
-
-Work with limited or sensitive data responsibly
-
-Choose the correct visualization based on data grain
-
-Avoid misleading analytics
-
-Translate technical findings into operational insights
-
-Communicate assumptions clearly and professionally
-
-These are core skills for analytics roles in theme parks, entertainment, and operations strategy.
+**Andrew Gentilcore**  
+Business Analytics student at the University of Tennessee, Knoxville  
+Graduating May 2026  
