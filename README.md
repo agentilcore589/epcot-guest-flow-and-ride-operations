@@ -74,9 +74,6 @@ The dataset represents simulated guest activity within EPCOT and includes:
 - `Epcot.pbix`  
   Power BI dashboard file
 
-- `Epcot.pdf`  
-  Exported Power BI dashboard (static view)
-
 ---
 
 ## Key Takeaways
